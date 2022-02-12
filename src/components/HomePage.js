@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 
-import DropdownDemo from "./DropdownDemo";
-
 export default class HomePage extends Component {
   render() {
     return (
-      <div>
-        <Carousel>
-          <Carousel.Item interval={5000}>
+      <div className="container-fluid" style={{ height: "50%" }}>
+        <Carousel indicators={false}>
+          <Carousel.Item indicators={false} interval={5000}>
             <img
               className="d-block w-100"
               src="https://stellastays.com/static/media/w1440-mtl-stj-53.21475e0e.webp"
@@ -46,9 +44,6 @@ export default class HomePage extends Component {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <DropdownDemo />
-
-        {/* <CalendarDemo /> */}
       </div>
     );
   }

@@ -68,87 +68,81 @@ export default class DropdownDemo extends Component {
           bg="light"
           expand="lg"
           className="inputContainer"
+          style={{ borderRadius: "40px", marginTop: "-40px" }}
         >
-          <Container fluid>
-            <Navbar.Toggle aria-controls="navbar-light-example" />
-            <Navbar.Collapse id="navbar-light-example">
-              <div className="p-fluid grid formgrid">
-                <div
-                  style={{ marginLeft: "25px" }}
-                  className="field col-12 md:col-4"
-                >
-                  &nbsp;&nbsp;
-                  <label htmlFor="multiplemonths">CITY</label>
-                  <Dropdown
-                    value={this.state.selectedCountry}
-                    options={this.countries}
-                    onChange={this.onCountryChange}
-                    optionLabel="name"
-                    filter
-                    showClear
-                    filterBy="name"
-                    placeholder="Select a Country"
-                  />{" "}
-                </div>
-              </div>
-              &nbsp; &nbsp; |
-              <div className="p-fluid grid formgrid">
-                <div
-                  style={{ marginLeft: "25px" }}
-                  className="field col-12 md:col-4"
-                >
-                  &nbsp;
-                  <label htmlFor="multiplemonths">DATES</label>
-                  <Calendar
-                    id="multiplemonths"
-                    value={this.state.date11}
-                    onChange={(e) => this.setState({ date11: e.value })}
-                    numberOfMonths={2}
-                    selectionMode="range"
-                    readOnlyInput
-                    showButtonBar
-                    placeholder="Select dates"
-                  />
-                </div>
-              </div>
-              &nbsp; &nbsp; |
-              <div className="p-fluid grid formgrid">
-                <div
-                  style={{ marginLeft: "25px" }}
-                  className="field col-12 md:col-3"
-                >
-                  <label htmlFor="multiplemonths">
-                    &nbsp; GUEST <br />
-                    &nbsp;
-                    {this.state.guestCount === 0
-                      ? " ADD GUEST "
-                      : " " + this.state.guestCount + " " + "guest"}
-                    &nbsp;
-                  </label>
-
-                  <Button
-                    icon="pi pi-plus"
-                    className="p-button-rounded p-button-text"
-                    onClick={this.incrementCount}
-                  />
-
-                  <Button
-                    icon="pi pi-minus"
-                    className="p-button-rounded p-button-text"
-                    onClick={this.decrementCount}
-                  />
-                </div>
-              </div>
-              &nbsp; &nbsp;
-              <Button
-                style={{ backgroundColor: "#75969f" }}
-                label="Search"
-                icon="pi pi-search"
+          <div className="p-fluid grid formgrid">
+            <div
+              style={{ marginLeft: "45px" }}
+              className="field col-12 md:col-4"
+            >
+              &nbsp;&nbsp;
+              <label htmlFor="multiplemonths">CITY</label>
+              <Dropdown
+                value={this.state.selectedCountry}
+                options={this.countries}
+                onChange={this.onCountryChange}
+                optionLabel="name"
+                filter
+                showClear
+                filterBy="name"
+                placeholder="Select a Country"
+              />{" "}
+            </div>
+          </div>
+          &nbsp; &nbsp; |
+          <div className="p-fluid grid formgrid">
+            <div
+              style={{ marginLeft: "45px" }}
+              className="field col-12 md:col-4"
+            >
+              &nbsp;
+              <label htmlFor="multiplemonths">DATES</label>
+              <Calendar
+                id="multiplemonths"
+                value={this.state.date11}
+                onChange={(e) => this.setState({ date11: e.value })}
+                numberOfMonths={2}
+                selectionMode="range"
+                readOnlyInput
+                showButtonBar
+                placeholder="Select dates"
               />
-            </Navbar.Collapse>
-          </Container>
+            </div>
+          </div>
+          &nbsp; &nbsp;
+          <div className="p-fluid grid formgrid">
+            <div
+              style={{ marginLeft: "55px" }}
+              className="field col-12 md:col-3"
+            >
+              <label htmlFor="multiplemonths">
+                &nbsp; GUEST <br />
+                &nbsp;
+                {this.state.guestCount === 0
+                  ? " ADD GUEST "
+                  : " " + this.state.guestCount + " " + "guest"}
+                &nbsp;
+              </label>
+
+              <Button
+                icon="pi pi-minus"
+                className="p-button-rounded p-button-text"
+                onClick={this.decrementCount}
+              />
+              <Button
+                icon="pi pi-plus"
+                className="p-button-rounded p-button-text"
+                onClick={this.incrementCount}
+              />
+            </div>
+          </div>
+          &nbsp; &nbsp;
+          <Button
+            style={{ backgroundColor: "#75969f" }}
+            label="Search"
+            icon="pi pi-search"
+          />
         </Navbar>
-        <ImageList />
       </>
     );
   }

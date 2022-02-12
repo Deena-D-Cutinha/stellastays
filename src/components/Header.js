@@ -1,14 +1,16 @@
-import React, { createRef, useRef } from "react";
-import { Navbar, Nav, NavDropdown, Carousel } from "react-bootstrap";
+import React from "react";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import DropdownDemo from "./DropdownDemo";
 import FooterPage from "./FooterPage";
 import HomePage from "./HomePage";
+import ImageList from "./ImageList";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.footerRef = React.createRef();
   }
+  //scroll using window
   scrollToFooter() {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -21,12 +23,21 @@ class Header extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="light" expand="lg" sticky="top">
+        {" "}
+        <Navbar
+          scrolling
+          dark
+          expand="md"
+          fixed="top"
+          className="fixed-nav-bar"
+        >
           <Navbar.Brand href="#home">
             <img
               src="https://stellastays.com/static/media/header-logo.76e595a3.svg"
+              alt=" Brand logo"
+              width="100"
+              height="90"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
             />
           </Navbar.Brand>
 
@@ -49,15 +60,23 @@ class Header extends React.Component {
                 <NavDropdown.Item href="#action/3.3">
                   Something
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
         <HomePage />
+        <div class="container pt-5" style={{ marginTop: "-40px" }}>
+          <div class="row">
+            <div class="col-12">
+              <DropdownDemo />
+            </div>
+            <br />
+
+            <div class="col-12">
+              <ImageList />
+            </div>
+          </div>
+        </div>
         <FooterPage inputRef={this.footerRef} />
       </>
     );

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,6 +6,10 @@ import React, { Component } from "react";
 
 export default class App extends Component {
   render() {
-    return <Header />;
+    return (
+      <div className="app">
+        <Header />
+      </div>
+    );
   }
 }
